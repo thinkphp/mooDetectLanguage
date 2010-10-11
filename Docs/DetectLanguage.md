@@ -48,7 +48,7 @@ Fired when the request has completed. This overrides the signature of the Reques
 
 ### Request.DetectLanguage Method: detect (#Request.DetectLanguage : detect)
 
-    This public method make a AJAX request and send the desired text to the PHP.
+This public method make a AJAX request and send the desired text to the PHP to detect the language.
 
 #### Syntax:
      var d = new Request.DetectLanguage(options);
@@ -62,3 +62,34 @@ Fired when the request has completed. This overrides the signature of the Reques
 #### Returns:
 
 - none.
+
+### Usage
+
+           #JS
+           window.addEvent('domready',function(){                  
+                  var d = new Request.DetectLanguage({
+                          url: 'detect.php',
+                          onSuccess: function(resp, origresp) {
+                                if(window.console){console.log(origresp)} 
+                                var resp = resp[0],
+                                    //the div where we put out the result
+                                    result = document.id('result'),
+                                    output = '<div><b>Language:</b> '+ resp.l + 
+                                             ', <b>isReliable:</b> '+ resp.r +
+                                             ', <b>confidence:</b> '+ resp.c; 
+                                result.fade('hide');
+                                result.fade(1);
+                                result.set('html',output);                                 
+                          } 
+                  });
+                  //get value from textarea and call method detect() with this arg
+                  d.detect(document.id('input_text').get('value'));
+                  //add handler to the click event on button
+                  $('detect').addEvent('click',function(){
+                           var val = document.id('input_text').get('value');
+                           if(val){
+                             d.detect(val);
+                           }
+                  });
+
+           }); 
