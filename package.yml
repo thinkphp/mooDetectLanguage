@@ -2,6 +2,6 @@ name: Request.DetectLanguage
 author: thinkphp
 current: v1.0  
 category: utilities  
-tags: [google,detection,detect,language]
-docs:  
-demo:  
+tags: [google,detection,detect,language,json,service,ajax]
+docs: http://github.com/thinkphp/mooDetectLanguage/blob/master/Docs/DetectLanguage.md 
+demo: http://thinkphp.ro/apps/google/detection-language/MooTools/ 
