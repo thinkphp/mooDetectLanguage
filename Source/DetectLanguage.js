@@ -18,21 +18,28 @@ provides:
 
 Request.DetectLanguage = new Class({
 
+       /* Inheritance occurs here through Extends */
        Extends: Request.JSON,
 
+       /* some options public*/
        options: {
           url: 'detect.php',
           method: 'post'
        }, 
-
+      /*
+       * @public
+       */ 
       detect: function(text) {
           this.text = text; 
           this.send({
                data:{
                     text: text
                     }
-          }); 
+          });          
       },
+      /*
+       * @private
+       */ 
       parseResponse: function(o) {
           var data = [];
           if(o.responseStatus == 200) {
@@ -44,13 +51,15 @@ Request.DetectLanguage = new Class({
           }//end if
         return data; 
       },
-
+      /*
+       * @public
+       */ 
       success: function(resp) {
          this.response = JSON.decode(resp);
          var resp = this.parseResponse(this.response);
          this.fireEvent('success',[resp, this.response]); 
      },
-
+     /* set languanges */
      googleLanguages : {lang:{
         'af':'AFRIKAANS',
         'sq':'ALBANIAN',

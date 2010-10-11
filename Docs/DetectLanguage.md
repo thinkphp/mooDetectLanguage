@@ -38,5 +38,9 @@ Fired when the request has completed. This overrides the signature of the Reques
 
 #### Syntax:
      var d = new Request.DetectLanguage(options);
-     d.detect('Mootools est un framework Javascript compact, modulaire, oriente objet.');    
+     d.detect('Mootools est un framework Javascript compact, modulaire, oriente object.');    
      //return Language: french, isReliable: false, confidence: 0.3551673
+
+#### Arguments:
+
+#### Returns:
