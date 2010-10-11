@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>Plugin Request.DetectLanguage MooTools using Google Language API</title> 
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"> 
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+    html,body {background: #ccc;font-family: georgia,arial,verdana,sans-serif} 
+    #doc {background: #fff;border: 1em solid #fff;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius: 10px;-moz-box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.4);} 
+    h1{font-family:calibri,sans-serif;color:#111;font-size:200%;font-weight:bold;}
+    .invalid {background: #ffff00}   
+    #result {margin: 4px;padding: 3px}
+    #ft {font-size:80%;color:#888;text-align:left;margin:2em 0;font-size: 12px}
+    #ft p a{color:#393;}
+   </style>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
+   <script type="text/javascript">google.load("mootools", "1.2.4");</script>
+   <script type="text/javascript" src="DetectLanguage-yui-compressed.js"></script>
+   <script type="text/javascript">
+           window.addEvent('domready',function(){                  
+                  var d = new Request.DetectLanguage({
+                          url: 'detect.php',
+                          onSuccess: function(resp, origresp) {
+                                if(window.console){console.log(origresp)} 
+                                var resp = resp[0],
+                                    result = document.id('result'),
+                                    output = '<div><b>Language:</b> '+ resp.l + 
+                                             ', <b>isReliable:</b> '+ resp.r +
+                                             ', <b>confidence:</b> '+ resp.c; 
+                                result.fade('hide');
+                                result.fade(1);
+                                result.set('html',output);                                 
+                          } 
+                  });
+                  d.detect(document.id('input_text').get('value'));
+                  $('detect').addEvent('click',function(){
+                           var val = document.id('input_text').get('value');
+                           if(val){
+                             d.detect(val);
+                           }
+                  });
+
+           }); 
+   </script>
+</head>
+<body>
+<div id="doc" class="yui-t7"> 
+    <div id="hd" role="banner"><h1>Request.DetectLanguage Plugin MooTools</h1></div> 
+    <p class="intro">This class allows you to detect the language of blocks of text within a webpage. It uses AJAX Language API for Detection.</p>
+    <div id="bd" role="main"> 
+     <textarea rows="10" cols="105" id="input_text">Mootools est un framework Javascript compact, modulaire, oriente objet.</textarea><br/>
+     <input type="button" id="detect" value="detect"> 
+     <div id="result"></div>
+    </div><!-- end bd --> 
+<div id="ft"><p>follow  @<a href="http://twitter.com/thinkphp">thinkphp</a></p></div>
+</div><!--end doc -->
+</body>
+</html>

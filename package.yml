@@ -1,0 +1,7 @@
+name: Request.DetectLanguage
+author: thinkphp
+current: v1.0  
+category: utilities  
+tags: [google,detection,detect,language]
+docs:  
+demo:  
