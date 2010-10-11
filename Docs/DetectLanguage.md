@@ -25,7 +25,7 @@ All the events you know from Request.JSON.
 
 #### success
 
-Fired when the request has completed. This overrides the signature of the Request.JSON success event.
+(*Function*) - Fired when the request has completed. This overrides the signature of the Request.JSON success event.
 
 #### Signature:
 
