@@ -57,8 +57,8 @@ Fired when the request has completed. This overrides the signature of the Reques
 
 #### Arguments:
 
-     text (*String*) Desired blocks of text you want to detect.
+- text (*String*) Desired blocks of text you want to detect.
 
 #### Returns:
 
-     none.
+- none.
