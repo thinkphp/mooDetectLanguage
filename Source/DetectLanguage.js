@@ -1,6 +1,6 @@
 /*
 ---
-description: language detection using google language api
+description: This class allows you to detect the language of blocks of text within a webpage. It uses AJAX Language API for Detection.
 
 authors:
   - Adrian Statescu (http://thinkphp.ro)
