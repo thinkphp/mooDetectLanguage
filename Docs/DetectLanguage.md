@@ -13,7 +13,7 @@ var d = new Request.DetectLanguage([options]);
  
 #### Arguments:
   
-     options (*object*) (optional) All options from Request.JSON.      
+- options (*object*) (optional) All options from Request.JSON.      
 
 ### Returns:
 
