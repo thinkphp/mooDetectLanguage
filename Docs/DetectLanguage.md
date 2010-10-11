@@ -10,7 +10,7 @@ Request.DetectLanguage Method: constructor(#Request.DetectLanguage: constructor)
 ### Syntax: 
 
 var d = new Request.DetectLanguage([options]);
-
+ 
 #### Arguments:
   
      options (*object*) (optional) All options from Request.JSON.      
@@ -34,9 +34,9 @@ Fired when the request has completed. This overrides the signature of the Reques
 ##### Arguments:
 
 - resp (*Array with an object*) This vector 'resp' contains an object with 3 keys which means:
-'l'(*String*) - language
-'r'(*Boolean*) - true/false if is reliable or not.
-'c'(*Float*) - the confidence measured by a real number.  
+ 'l'(*String*) - language
+ 'r'(*Boolean*) - true/false if is reliable or not.
+ 'c'(*Float*) - the confidence measured by a real number.  
 
 - origresp (*Object*) response from google api detection 
                  A possible response from service:  
