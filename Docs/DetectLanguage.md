@@ -53,7 +53,11 @@ This public method make a AJAX request and send the desired text to the PHP to d
 #### Syntax:
      var d = new Request.DetectLanguage(options);
      d.detect('Mootools est un framework Javascript compact, modulaire, oriente object.');    
-     //return Language: french, isReliable: false, confidence: 0.3551673
+     /* 
+        Example output:
+        Function 'onSuccess' pass through 'resp'
+        Language: french, isReliable: false, confidence: 0.3551673
+      */  
 
 #### Arguments:
 
