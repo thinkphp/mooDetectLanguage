@@ -1,7 +1,7 @@
 Request.DetectLanguage
 ======================
 
-This class allows you to detect the language of blocks of text within a webpage. It uses AJAX Language API for Detection.
+This class allows you to detect the language of blocks of text within a webpage. It uses Google AJAX Language API for Detection.
 
 ![Screenshot](http://farm5.static.flickr.com/4148/5070795205_8542802e5c_z.jpg)
 
