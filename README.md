@@ -42,6 +42,7 @@ In your JS:
            }); 
 
 In your body HTML:
+
      #HTML 
      <textarea rows="10" cols="105" id="input_text">Mootools est un framework Javascript compact, modulaire, oriente objet.</textarea>
      <br/>
